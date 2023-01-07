@@ -9,21 +9,12 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
 
-public class C02_OturumAc {
-    WebDriver driver;
+public class C02_OturumAc extends TestBase {
 
-    @Before
-    public void setUp() {
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
-    }
     @Test
     public void test(){
        //1. Tarayıcıyı başlatın
         //2. 'http://automationexercise.com' URL'sine gidin
-        driver.get("http://automationexercise.com");
         //3. Ana sayfanın başarıyla göründüğünü doğrulayın
         driver.findElement(By.xpath("//*[@style='color: orange;']")).isDisplayed();
         //4. 'Kaydol / Giriş Yap' düğmesine tıklayın
@@ -40,9 +31,5 @@ public class C02_OturumAc {
         //10. 'HESAP SİLİNDİ!' görünür
         driver.findElement(By.xpath("//*[@class='title text-center']")).isDisplayed();
     }
-     @After
-    public void tearDown() {
 
-        driver.close();
-     }
 }

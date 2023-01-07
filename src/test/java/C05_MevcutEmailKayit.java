@@ -9,16 +9,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
 
-public class C05_MevcutEmailKayit {
-    WebDriver driver;
+public class C05_MevcutEmailKayit extends TestBase{
 
-    @Before
-    public void setUp() {
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
-    }
    @Test
            public void test(){
        //1. Tarayıcıyı başlatın
@@ -36,11 +28,4 @@ public class C05_MevcutEmailKayit {
        //8. 'E-posta Adresi zaten mevcut!' hatasını doğrulayın. görünür
        driver.findElement(By.cssSelector("p[style='color: red;']")).isDisplayed();
    }
-
-
-
-    @After
-    public void tearDown() {
-     driver.close();
-    }
 }

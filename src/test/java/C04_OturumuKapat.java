@@ -11,18 +11,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
 
-public class C04_OturumuKapat {
-    WebDriver driver;
-
-    @Before
-    public void setUp() {
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
-    }
-
-    @Test
+public class C04_OturumuKapat extends TestBase{
+   @Test
     public void test() {
         //    1. Tarayıcıyı başlatın
 
@@ -54,9 +44,6 @@ public class C04_OturumuKapat {
         Assert.assertTrue(oturumAcmaAnaSayfasi.isDisplayed());
     }
 
-    @After
-    public void tearDown() {
-        driver.close();
-    }
+
 
 }

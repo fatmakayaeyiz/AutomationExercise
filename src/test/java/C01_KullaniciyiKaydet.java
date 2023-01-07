@@ -11,22 +11,7 @@ import org.openqa.selenium.support.ui.Select;
 
 import java.time.Duration;
 
-public class C01_KullaniciyiKaydet {
-    WebDriver driver;
-
-    @Before
-    public void setUp() {
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
-    }
-
-    @After
-    public void tearDown() {
-       driver.close();
-    }
-
+public class C01_KullaniciyiKaydet extends TestBase {
     @Test
     public void kullaniciyiKaydet() {
 //        1. Tarayıcıyı başlatın
@@ -70,7 +55,7 @@ public class C01_KullaniciyiKaydet {
 //15. 'Devam Et' düğmesini tıklayın
         driver.findElement(By.xpath("//*[@class='pull-right']")).click();
 //16. "Kullanıcı adı olarak oturum açıldı" ifadesinin görünür olduğunu doğrulayın
-        driver.navigate().refresh();
+
         driver.findElement(By.xpath("//*[@class='title text-center']")).isDisplayed();
         driver.navigate().refresh();
 //17. 'Hesabı Sil' düğmesini tıklayın
