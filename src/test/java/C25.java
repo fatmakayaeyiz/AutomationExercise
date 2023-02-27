@@ -6,7 +6,7 @@ import org.openqa.selenium.interactions.Actions;
 
 public class C25 extends TestBase{
     @Test
-    public void name() {
+    public void name() throws InterruptedException {
         //4. Sayfayı aşağıya doğru kaydırın
         Actions actions = new Actions(driver);
         actions.sendKeys(Keys.END).perform();
@@ -17,7 +17,11 @@ public class C25 extends TestBase{
         //7. Sayfanın yukarı kaydırıldığını ve 'Otomasyon Mühendisleri için
         // Tam Teşekküllü uygulama web sitesi' metninin ekranda göründüğünü doğrulayın
         Assert.assertTrue(driver.findElement(By.xpath("//*[@class='shop-menu pull-right']")).isDisplayed());
-        Assert.assertTrue(driver.findElement(By.xpath("(//*[text()='Full-Fledged practice website for Automation Engineers'])[1]")).isDisplayed());
+        // Tam Teşekküllü uygulama web sitesi' metninin ekranda göründüğünü doğrulayın
+
+
+        Assert.assertEquals("AutomationExercise\n" +
+                "Full-Fledged practice website for Automation Engineers",driver.findElement(By.xpath("//*[text()='Full-Fledged practice website for Automation Engineers']")));
 
     }
 }

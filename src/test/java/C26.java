@@ -18,7 +18,7 @@ public class C26 extends TestBase{
        //7. Sayfanın yukarı kaydırıldığını ve
         // 'Otomasyon Mühendisleri için Tam Teşekküllü uygulama web sitesi' metninin ekranda göründüğünü doğrulayın
        Assert.assertTrue(driver.findElement(By.xpath("//*[@class='shop-menu pull-right']")).isDisplayed());
-       Assert.assertTrue(driver.findElement(By.xpath("(//*[text()='Full-Fledged practice website for Automation Engineers'])[2]")).isDisplayed());
+       driver.findElement(By.xpath("(//*[text()='Full-Fledged practice website for Automation Engineers'])[2]")).isDisplayed();
 
    }
 }

@@ -19,9 +19,11 @@ public class C06 extends TestBase {
 //6. Adı, e-postayı, konuyu ve mesajı girin
         driver.findElement(By.xpath("(//*[@class='form-control'])[1]")).sendKeys("Fatma", Keys.TAB,
                 "fatmakaya@hotmail.com", Keys.TAB, "autamation", Keys.TAB, "Test Case");
+
 //7. Dosya yükleyin
         driver.findElement(By.xpath("//*[@name='upload_file']")).sendKeys("C:/Users/DELL/Desktop/seleniumtask.docx");
 //8. 'Gönder' düğmesini tıklayın
+        Thread.sleep(3000);
         driver.findElement(By.xpath("//*[@name='submit']")).sendKeys(Keys.ENTER);
 
 

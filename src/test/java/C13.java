@@ -4,12 +4,14 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 
+import java.awt.*;
+import java.awt.event.KeyEvent;
+
 public class C13 extends TestBase {
     @Test
-    public void name() throws InterruptedException {
-        //4. Ana sayfadaki herhangi bir ürün için 'Ürünü Görüntüle'ye tıklayın
+    public void name() throws InterruptedException, AWTException {
+        //4. Ana sayfadaki herhangi bir ürün için 'Ürünü Görüntüle'ye tıklayın4
         driver.findElement(By.xpath("(//*[@class='fa fa-plus-square'])[1]")).click();
-
         driver.navigate().refresh();
         driver.findElement(By.xpath("(//*[@class='fa fa-plus-square'])[1]")).click();
         //5. Ürün detayının açıldığını doğrulayın
@@ -22,5 +24,6 @@ public class C13 extends TestBase {
         //9. Sepet sayfasında ürünün tam miktar ile görüntülendiğini doğrulayın.
         WebElement sepet = driver.findElement(By.xpath("//*[@class='disabled']"));
         Assert.assertEquals("4", sepet.getText());
+
     }
 }
